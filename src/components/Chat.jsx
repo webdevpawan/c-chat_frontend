@@ -39,6 +39,8 @@ function Chat() {
     socket.on("leave", (data) => {
       setMessages([...messages, data]);
       console.log(data.user, data.message);
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     })
 
     return () => {
@@ -50,6 +52,7 @@ function Chat() {
     socket.on("sendMessage", (data) => {
       setMessages([...messages, data]);
       console.log(data.user, data.message, data.id)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     })
     return () => {
       socket.off()
